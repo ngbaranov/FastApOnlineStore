@@ -1,2 +1,5 @@
-from .category_mod import Category
-from .products_mod import Product
+from .category import Category
+from .products import Product
+
+
+

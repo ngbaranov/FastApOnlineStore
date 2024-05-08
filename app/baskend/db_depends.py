@@ -4,8 +4,5 @@ from app.baskend.db import async_session_maker
 
 
 async def get_db() -> AsyncSession:
-    db = async_session_maker()
-    try:
-        yield db
-    finally:
-        await db.close()
+    async with async_session_maker() as session:
+        yield session
